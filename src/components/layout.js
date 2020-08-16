@@ -4,26 +4,26 @@ import WindowSizeListener from "react-window-size-listener"
 
 // import { rhythm, scale } from "../utils/typography"
 import { Helmet } from "react-helmet/es/Helmet"
-import Header from "./Header/Header"
-import Footer from "./Footer/Footer"
+// import Header from "./Header/Header"
+// import Footer from "./Footer/Footer"
 import { WindowSizeContext } from "../contexts/windowSizeContext"
 
 const Layout = ({ location, title, children }) => {
   const [windowSize, setWindowSize] = useState({ width: null, height: null })
 
   const rootPath = `${__PATH_PREFIX__}/`
-  let header = (
-    <>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
-      <Header />
-    </>
-  )
-  let footer = <Footer />
+  // let header = (
+  //   <>
+  //     <Helmet>
+  //       <link
+  //         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+  //         rel="stylesheet"
+  //       />
+  //     </Helmet>
+  //     <Header />
+  //   </>
+  // )
+  // let footer = <Footer />
 
   // if (location.pathname === rootPath) {
   //   header = (

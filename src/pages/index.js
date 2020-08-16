@@ -6,11 +6,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import { rhythm } from "../utils/typography"
 import { Helmet } from "react-helmet/es/Helmet"
-import Header from "../components/Header/Header"
-import OfferSection from "../components/OfferSection/OfferSection"
-import AboutSection from "../components/AboutSection/AboutSection"
-import ContactFormSection from "../components/ContactFormSection/AboutSection"
-import SliderSection from "../components/SliderSection/SliderSection"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -26,10 +21,10 @@ const BlogIndex = ({ data, location }) => {
       {/*  label={"Label"}*/}
       {/*/>*/}
       <SEO title="All posts" />
-      <SliderSection />
-      <OfferSection />
-      <AboutSection />
-      <ContactFormSection />
+      {/*<SliderSection />*/}
+      {/*<OfferSection />*/}
+      {/*<AboutSection />*/}
+      {/*<ContactFormSection />*/}
       {/*{posts.map(({ node }) => {*/}
       {/*  const title = node.frontmatter.title || node.fields.slug*/}
       {/*  return (*/}
