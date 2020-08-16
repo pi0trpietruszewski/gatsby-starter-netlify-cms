@@ -56,6 +56,56 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
+      <>
+        <button
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Click
+        </button>
+        <input
+          style={{ cursor: "pointer" }}
+          type="button"
+          value={"Click"}
+          onClick={() => {
+            alert("x")
+          }}
+        />
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Div
+        </div>
+        <a
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Div
+        </a>
+        <span
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+        Div
+      </span>
+        <p
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Div
+        </p>
+      </>
       <header>{header}</header>
       <main>{children}</main>
       <footer>
