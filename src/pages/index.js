@@ -1,12 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SliderSection from "../components/SliderSection/SliderSection";
 import OfferSection from "../components/OfferSection/OfferSection";
 import ContactFormSection from "../components/ContactFormSection/AboutSection";
 import AboutSection from "../components/AboutSection/AboutSection";
+import Layout from "../components/layout";
 
 
 const BlogIndex = ({ data, location }) => {
