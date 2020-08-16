@@ -1,29 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
-import WindowSizeListener from "react-window-size-listener"
 
-// import { rhythm, scale } from "../utils/typography"
-import { Helmet } from "react-helmet/es/Helmet"
-import Header from "./Header/Header"
-import Footer from "./Footer/Footer"
-import { WindowSizeContext } from "../contexts/windowSizeContext"
+import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
-  const [windowSize, setWindowSize] = useState({ width: null, height: null })
-
   const rootPath = `${__PATH_PREFIX__}/`
-  let header = (
-    <>
-      <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet>
-      <Header />
-    </>
-  )
-  let footer = <Footer />
+  let header
 
   // if (location.pathname === rootPath) {
   //   header = (
@@ -66,85 +48,56 @@ const Layout = ({ location, title, children }) => {
   //   )
   // }
   return (
-    <>
-      <button
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Click
-      </button>
-      <input
-        style={{ cursor: "pointer" }}
-        type="button"
-        value={"Click"}
-        onClick={() => {
-          alert("x")
-        }}
-      />
-      <div
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Div
-      </div>
-      <a
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Div
-      </a>
-      <span
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Div
-      </span>
-      <p
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Div
-      </p>
-
-     <div
-      className="container"
-      style={
-        {
-          // marginLeft: `auto`,
-          // marginRight: `auto`,
-          // maxWidth: 1920,
-          // padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }
-      }
-    >
-      <WindowSizeContext.Provider value={windowSize}>
-        <WindowSizeListener
-          onResize={({ windowHeight, windowWidth }) => {
-            setWindowSize({ width: windowWidth, height: windowHeight })
-          }}
-        />
-        {header}
-
-        <main>{children}</main>
-        {footer}
-        {/*<footer>*/}
-        {/*  © {new Date().getFullYear()}, Built with*/}
-        {/*  {` `}*/}
-        {/*  <a href="https://www.gatsbyjs.org">Gatsby</a>*/}
-        {/*</footer>*/}
-      </WindowSizeContext.Provider>
-    </div>
-    </>
+      <>
+          <button
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                  alert("x")
+              }}
+          >
+              Click
+          </button>
+          <input
+              style={{ cursor: "pointer" }}
+              type="button"
+              value={"Click"}
+              onClick={() => {
+                  alert("x")
+              }}
+          />
+          <div
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                  alert("x")
+              }}
+          >
+              Div
+          </div>
+          <a
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                  alert("x")
+              }}
+          >
+              Div
+          </a>
+          <span
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                  alert("x")
+              }}
+          >
+              Div
+          </span>
+          <p
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                  alert("x")
+              }}
+          >
+              Div
+          </p>
+      </>
   )
 }
 

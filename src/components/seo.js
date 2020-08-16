@@ -11,23 +11,23 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ description, lang, meta, title }) => {
-  // const { site } = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       site {
-  //         siteMetadata {
-  //           title
-  //           description
-  //           social {
-  //             twitter
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `
-  // )
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            social {
+              twitter
+            }
+          }
+        }
+      }
+    `
+  )
 
-  const metaDescription ='x' //description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
@@ -35,7 +35,7 @@ const SEO = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | `}//${site.siteMetadata.title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -57,10 +57,10 @@ const SEO = ({ description, lang, meta, title }) => {
           name: `twitter:card`,
           content: `summary`,
         },
-        // {
-        //   name: `twitter:creator`,
-        //   content: site.siteMetadata.social.twitter,
-        // },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.social.twitter,
+        },
         {
           name: `twitter:title`,
           content: title,
