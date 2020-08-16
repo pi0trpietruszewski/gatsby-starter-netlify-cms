@@ -1,0 +1,23 @@
+.activeMobile:before {
+    transform: translateX(-50%);
+    border-radius: 100%;
+    position: absolute;
+    background: white;
+    bottom: -10px;
+    content: '';
+    height: 31px;
+    width: 31px;
+    left: 50%;
+}
+
+.activeLink:before {
+    transform: translateX(-50%);
+    border-radius: 100%;
+    position: absolute;
+    background: #FFC4AD;
+    bottom: -4px;
+    content: '';
+    height: 11px;
+    width: 11px;
+    left: 50%;
+}

@@ -77,7 +77,7 @@ const Footer = class extends React.Component {
                 <a title="facebook" href="https://facebook.com">
                   <img
                     src={facebook}
-                    alt="Facebook"
+                 li   alt="Facebook"
                     style={{ width: '1em', height: '1em' }}
                   />
                 </a>

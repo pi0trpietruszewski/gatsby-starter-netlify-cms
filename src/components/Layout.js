@@ -1,58 +1,151 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import React, { useState } from "react"
+import { Link } from "gatsby"
+import WindowSizeListener from "react-window-size-listener"
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
-  return (
-    <div>
+// import { rhythm, scale } from "../utils/typography"
+import { Helmet } from "react-helmet/es/Helmet"
+import Header from "./Header/Header"
+import Footer from "./Footer/Footer"
+import { WindowSizeContext } from "../contexts/windowSizeContext"
+
+const Layout = ({ location, title, children }) => {
+  const [windowSize, setWindowSize] = useState({ width: null, height: null })
+
+  const rootPath = `${__PATH_PREFIX__}/`
+  let header = (
+    <>
       <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
-          sizes="16x16"
-        />
-
-        <link
-          rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
-        />
-        <meta name="theme-color" content="#fff" />
-
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta
-          property="og:image"
-          content={`${withPrefix('/')}img/og-image.jpg`}
+          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap"
+          rel="stylesheet"
         />
       </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
+      <Header />
+    </>
+  )
+  let footer = <Footer />
+
+  // if (location.pathname === rootPath) {
+  //   header = (
+  //     <h1
+  //       style={{
+  //         ...scale(1.5),
+  //         marginBottom: rhythm(1.5),
+  //         marginTop: 0,
+  //       }}
+  //     >
+  //       <Link
+  //         style={{
+  //           boxShadow: `none`,
+  //           color: `inherit`,
+  //         }}
+  //         to={`/`}
+  //       >
+  //         {title}
+  //       </Link>
+  //     </h1>
+  //   )
+  // } else {
+  //   header = (
+  //     <h3
+  //       style={{
+  //         fontFamily: `Montserrat, sans-serif`,
+  //         marginTop: 0,
+  //       }}
+  //     >
+  //       <Link
+  //         style={{
+  //           boxShadow: `none`,
+  //           color: `inherit`,
+  //         }}
+  //         to={`/`}
+  //       >
+  //         {title}
+  //       </Link>
+  //     </h3>
+  //   )
+  // }
+  return (
+    <>
+      <button
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          alert("x")
+        }}
+      >
+        Click
+      </button>
+      <input
+        style={{ cursor: "pointer" }}
+        type="button"
+        value={"Click"}
+        onClick={() => {
+          alert("x")
+        }}
+      />
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          alert("x")
+        }}
+      >
+        Div
+      </div>
+      <a
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          alert("x")
+        }}
+      >
+        Div
+      </a>
+      <span
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          alert("x")
+        }}
+      >
+        Div
+      </span>
+      <p
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          alert("x")
+        }}
+      >
+        Div
+      </p>
+
+     <div
+      className="container"
+      style={
+        {
+          // marginLeft: `auto`,
+          // marginRight: `auto`,
+          // maxWidth: 1920,
+          // padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        }
+      }
+    >
+      <WindowSizeContext.Provider value={windowSize}>
+        <WindowSizeListener
+          onResize={({ windowHeight, windowWidth }) => {
+            setWindowSize({ width: windowWidth, height: windowHeight })
+          }}
+        />
+        {header}
+
+        <main>{children}</main>
+        {footer}
+        {/*<footer>*/}
+        {/*  © {new Date().getFullYear()}, Built with*/}
+        {/*  {` `}*/}
+        {/*  <a href="https://www.gatsbyjs.org">Gatsby</a>*/}
+        {/*</footer>*/}
+      </WindowSizeContext.Provider>
     </div>
+    </>
   )
 }
 
-export default TemplateWrapper
+export default Layout
