@@ -13,7 +13,7 @@ import { ErrorLabel } from "../TextInput/TextInput.styles"
 import { Checkbox } from "../Checkbox/Checkbox"
 
 const ContactFormSection = () => {
-  const { register, handleSubmit, watch, errors } = useForm()
+  // const { register, handleSubmit, watch, errors } = useForm()
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState(null)
 
@@ -41,16 +41,16 @@ const ContactFormSection = () => {
         label={"E-mail"}
         name={"email"}
         placeholder={"np. aneta@poczta.onet.pl"}
-        onRef={register({ required, pattern: email })}
-        error={errors}
+        // onRef={register({ required, pattern: email })}
+        // error={errors}
       />
       <div className="my-4">
         <TextInput
           name={"phone"}
-          onRef={register({ required, pattern: phone })}
+          // onRef={register({ required, pattern: phone })}
           label={"Telefon"}
           placeholder={"987 789 789"}
-          error={errors}
+          // error={errors}
         />
       </div>
       {/*<div className="my-4">*/}
@@ -63,8 +63,8 @@ const ContactFormSection = () => {
       {/*</div>*/}
       <div className="my-4">
         <Checkbox
-          error={errors}
-          onRef={register({ required })}
+          // error={errors}
+          // onRef={register({ required })}
           name={"rodo"}
           label={"Akceptuję Politykę Prywatności"}
         />
