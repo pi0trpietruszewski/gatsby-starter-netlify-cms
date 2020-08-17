@@ -59,10 +59,10 @@ const ContactFormSection = () => {
       <div className="my-4">
         <TextInput
           name={"phone"}
-          onRef={register({ required, pattern: phone })}
+          // onRef={register({ required, pattern: phone })}
           label={"Telefon"}
           placeholder={"987 789 789"}
-          error={errors}
+          // error={errors}
         />
       </div>
       {/*<div className="my-4">*/}
@@ -75,8 +75,8 @@ const ContactFormSection = () => {
       {/*</div>*/}
       <div className="my-4">
         <Checkbox
-          // error={errors}
-          // onRef={register({ required })}
+          error={errors}
+          onRef={register({ required })}
           name={"rodo"}
           label={"Akceptuję Politykę Prywatności"}
         />
