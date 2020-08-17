@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet/es/Helmet"
 // import Footer from "./Footer/Footer"
 import { WindowSizeContext } from "../contexts/windowSizeContext"
 import Header from "./Header/Header"
+import Footer from "./Footer/Footer"
 
 const Layout = ({ location, title, children }) => {
   const [windowSize, setWindowSize] = useState({ width: null, height: null })
@@ -24,7 +25,7 @@ const Layout = ({ location, title, children }) => {
       <Header />
     </>
   )
-  // let footer = <Footer />
+  let footer = <Footer />
 
   // if (location.pathname === rootPath) {
   //   header = (
