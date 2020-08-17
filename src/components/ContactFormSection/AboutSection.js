@@ -15,11 +15,11 @@ import { Checkbox } from "../Checkbox/Checkbox"
 const required = { message: "Pole jest wymagane", value: true }
 const phone = {
   message: "Podaj numer telefonu w formacie 123456789",
-  value: /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/
+  value: /\+.\d/
 }
 const email = {
   message: "Podaj prawidłowy adres email (przyklad@przyklad.pl)",
-  value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  value: /\+{0,1}[\d\-\ ]{6,15}/
 }
 
 const ContactFormSection = () => {
@@ -59,10 +59,11 @@ const ContactFormSection = () => {
       <div className="my-4">
         <TextInput
           name={"phone"}
-          // onRef={register({ required, pattern: phone })}
+          type={'tel'}
+          onRef={register({ required, pattern: phone })}
           label={"Telefon"}
           placeholder={"987 789 789"}
-          // error={errors}
+          error={errors}
         />
       </div>
       {/*<div className="my-4">*/}

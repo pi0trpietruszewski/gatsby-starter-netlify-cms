@@ -10,6 +10,7 @@ const TextInput = ({
   placeholder,
   onRef,
   name,
+  type,
   error,
 }) => {
   return (
@@ -25,6 +26,7 @@ const TextInput = ({
         {label}
       </label>
       <InputC
+        type={type}
         name={name}
         ref={onRef}
         onChange={onChange}
