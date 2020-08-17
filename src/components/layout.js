@@ -66,84 +66,85 @@ const Layout = ({ location, title, children }) => {
   //   )
   // }
   return (
-    <>
-      <button
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Click
-      </button>
-      <input
-        style={{ cursor: "pointer" }}
-        type="button"
-        value={"Click"}
-        onClick={() => {
-          alert("x")
-        }}
-      />
-      <div
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Div
-      </div>
-      <a
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Div
-      </a>
-      <span
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
+
+    <div
+      className="container"
+      style={
+        {
+          // marginLeft: `auto`,
+          // marginRight: `auto`,
+          // maxWidth: 1920,
+          // padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        }
+      }
+    >
+      <>
+        <button
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Click
+        </button>
+        <input
+          style={{ cursor: "pointer" }}
+          type="button"
+          value={"Click"}
+          onClick={() => {
+            alert("x")
+          }}
+        />
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Div
+        </div>
+        <a
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Div
+        </a>
+        <span
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
         Div
       </span>
-      <p
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          alert("x")
-        }}
-      >
-        Div
-      </p>
-    </>
-    // <div
-    //   className="container"
-    //   style={
-    //     {
-    //       // marginLeft: `auto`,
-    //       // marginRight: `auto`,
-    //       // maxWidth: 1920,
-    //       // padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-    //     }
-    //   }
-    // >
-    //   <WindowSizeContext.Provider value={windowSize}>
-    //     <WindowSizeListener
-    //       onResize={({ windowHeight, windowWidth }) => {
-    //         setWindowSize({ width: windowWidth, height: windowHeight })
-    //       }}
-    //     />
-    //     {header}
-    //
-    //     <main>{children}</main>
-    //     {footer}
-    //     {/*<footer>*/}
-    //     {/*  © {new Date().getFullYear()}, Built with*/}
-    //     {/*  {` `}*/}
-    //     {/*  <a href="https://www.gatsbyjs.org">Gatsby</a>*/}
-    //     {/*</footer>*/}
-    //   </WindowSizeContext.Provider>
-    // </div>
+        <p
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            alert("x")
+          }}
+        >
+          Div
+        </p>
+      </>
+      <WindowSizeContext.Provider value={windowSize}>
+        <WindowSizeListener
+          onResize={({ windowHeight, windowWidth }) => {
+            setWindowSize({ width: windowWidth, height: windowHeight })
+          }}
+        />
+        {header}
+
+        <main>{children}</main>
+        {footer}
+        {/*<footer>*/}
+        {/*  © {new Date().getFullYear()}, Built with*/}
+        {/*  {` `}*/}
+        {/*  <a href="https://www.gatsbyjs.org">Gatsby</a>*/}
+        {/*</footer>*/}
+      </WindowSizeContext.Provider>
+    </div>
   )
 }
 
