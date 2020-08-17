@@ -13,7 +13,7 @@ import { ErrorLabel } from "../TextInput/TextInput.styles"
 import { Checkbox } from "../Checkbox/Checkbox"
 
 const ContactFormSection = () => {
-  // const { register, handleSubmit, watch, errors } = useForm()
+  const { register, handleSubmit, watch, errors } = useForm()
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState(null)
 
