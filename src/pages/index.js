@@ -21,8 +21,8 @@ const BlogIndex = ({ data, location }) => {
       {/*  label={"Label"}*/}
       {/*/>*/}
       <SEO title="All posts" />
-      {/*<SliderSection />*/}
-      {/*<OfferSection />*/}
+      <SliderSection />
+      <OfferSection />
       {/*<AboutSection />*/}
       {/*<ContactFormSection />*/}
       {/*{posts.map(({ node }) => {*/}
