@@ -32,7 +32,7 @@ const ContactFormSection = () => {
   }
 
   const renderForm = () => (
-    <form name={'contactForm'}  onSubmit={handleSubmit(submit)}>
+    <form name={'contactForm'} id={'contactForm'}   onSubmit={handleSubmit(submit)}>
       <FormTitle>
         Zostaw namiar,
         <br /> odezwiemy się
