@@ -21,10 +21,10 @@ const ContactFormSection = () => {
     return (
       <div className="d-flex align-items-center justify-content-center flex-column">
         <div>
-          <Loader />
-          <Loader />
-          <Loader />
-          <Loader />
+          <Loader/>
+          <Loader/>
+          <Loader/>
+          <Loader/>
         </div>
         <MediumTitle>Dziękujemy, wkrótce skontaktujemy się z Tobą</MediumTitle>
       </div>
@@ -32,10 +32,12 @@ const ContactFormSection = () => {
   }
 
   const renderForm = () => (
-    <>
+    <form onSubmit={handleSubmit(() => {
+      alert('elo')
+    })}>
       <FormTitle>
         Zostaw namiar,
-        <br /> odezwiemy się
+        <br/> odezwiemy się
       </FormTitle>
       <TextInput
         label={"E-mail"}
@@ -73,9 +75,9 @@ const ContactFormSection = () => {
         {status !== null && status !== "success" && (
           <ErrorLabel className="mb-3">{status}</ErrorLabel>
         )}
-        {loading ? <Loader /> : <Button>Wyślij!</Button>}
+        {loading ? <Loader/> : <Button>Wyślij!</Button>}
       </div>
-    </>
+    </form>
   )
 
   const submit = data => {
@@ -86,8 +88,8 @@ const ContactFormSection = () => {
       method: "POST",
       body: JSON.stringify({
         email: data.email.toLowerCase(),
-        phone: data.phone,
-      }),
+        phone: data.phone
+      })
     }).then(response => {
       if (response.ok) {
         setStatus("success")
@@ -107,7 +109,7 @@ const ContactFormSection = () => {
         <Card>{status === "success" ? renderSuccess() : renderForm()}</Card>
       </div>
       <div className="col-12 col-xl-6 my-5 d-flex align-items-stretch  justify-content-around flex-wrap">
-        <Img src={woman} />
+        <Img src={woman}/>
       </div>
     </section>
   )
@@ -116,11 +118,11 @@ const ContactFormSection = () => {
 const required = { message: "Pole jest wymagane", value: true }
 const phone = {
   message: "Podaj numer telefonu w formacie 123456789",
-  value: /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/,
+  value: /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/
 }
 const email = {
   message: "Podaj prawidłowy adres email (przyklad@przyklad.pl)",
-  value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 }
 
 export default ContactFormSection
