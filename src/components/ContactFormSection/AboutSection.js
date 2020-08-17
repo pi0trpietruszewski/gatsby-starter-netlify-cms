@@ -12,6 +12,16 @@ import { MediumTitle } from "../FeaturedMedium/FeaturedMedium.styles"
 import { ErrorLabel } from "../TextInput/TextInput.styles"
 import { Checkbox } from "../Checkbox/Checkbox"
 
+const required = { message: "Pole jest wymagane", value: true }
+const phone = {
+  message: "Podaj numer telefonu w formacie 123456789",
+  value: /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/
+}
+const email = {
+  message: "Podaj prawidłowy adres email (przyklad@przyklad.pl)",
+  value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+}
+
 const ContactFormSection = () => {
   const { register, handleSubmit, watch, errors } = useForm()
   const [loading, setLoading] = useState(false)
@@ -43,8 +53,8 @@ const ContactFormSection = () => {
         label={"E-mail"}
         name={"email"}
         placeholder={"np. aneta@poczta.onet.pl"}
-        // onRef={register({ required, pattern: email })}
-        // error={errors}
+        onRef={register({ required, pattern: email })}
+        error={errors}
       />
       <div className="my-4">
         <TextInput
@@ -115,14 +125,6 @@ const ContactFormSection = () => {
   )
 }
 
-const required = { message: "Pole jest wymagane", value: true }
-const phone = {
-  message: "Podaj numer telefonu w formacie 123456789",
-  value: /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/
-}
-const email = {
-  message: "Podaj prawidłowy adres email (przyklad@przyklad.pl)",
-  value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-}
+
 
 export default ContactFormSection
