@@ -3,7 +3,6 @@ import { FooterDescription, FooterTitle } from "./Footer.styles"
 import Logo from "../Logo/Logo"
 import LinkList from "../LinkList/LinkList"
 import { more, sitemap } from "../const/FooterVariables"
-import SocialFeedback from "../../SocialFeedback/SocialFeedback"
 
 const Footer = () => {
   return (
@@ -28,7 +27,7 @@ const Footer = () => {
         <LinkList title={"Wiecej"} links={more} />
       </div>
       <div className="col-md-12 col-xl-3 d-flex justify-content-center justify-content-xl-end align-items-xl-end ">
-        <SocialFeedback />
+        {/*<SocialFeedback />*/}
       </div>
     </div>
   )
