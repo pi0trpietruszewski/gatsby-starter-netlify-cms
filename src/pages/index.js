@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import { Helmet } from "react-helmet/es/Helmet"
 import SliderSection from "../components/SliderSection/SliderSection"
 import OfferSection from "../components/OfferSection/OfferSection"
+import ContactFormSection from "../components/ContactFormSection/AboutSection"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -26,7 +27,7 @@ const BlogIndex = ({ data, location }) => {
       <SliderSection />
       <OfferSection />
       {/*<AboutSection />*/}
-      {/*<ContactFormSection />*/}
+      <ContactFormSection />
       {/*{posts.map(({ node }) => {*/}
       {/*  const title = node.frontmatter.title || node.fields.slug*/}
       {/*  return (*/}
@@ -68,7 +69,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemaINrk(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
