@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import { rhythm } from "../utils/typography"
 import { Helmet } from "react-helmet/es/Helmet"
+import SliderSection from "../components/SliderSection/SliderSection"
+import OfferSection from "../components/OfferSection/OfferSection"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
